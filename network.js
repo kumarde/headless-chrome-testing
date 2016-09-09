@@ -1,5 +1,6 @@
 var Chrome = require('chrome-remote-interface');
 var spawn = require('child_process').spawn;
+var traceroute = require('traceroute');
 
 if (process.argv[2] === undefined) {
   throw Error('No headless binary path provided.');
@@ -25,9 +26,14 @@ function connect() {
   var request_data = {}
   var response_data = []
   var timeout = 10000;
- 
+
+  //This is where the final data will exist for a website
   function printDataAndExit(){
     console.log(JSON.stringify(request_data, null, 4));
+    for(var k in request_data){
+                            
+    }
+
     headless.kill();
     process.exit(0); 
   }
@@ -35,7 +41,6 @@ function connect() {
   setTimeout(printDataAndExit, timeout);
   
   getChromeInstance().then(instance => {
-    
     instance.Network.responseReceived(function(data){
       //This request was sent out
       if(data.response.url in request_data){

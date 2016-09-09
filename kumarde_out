@@ -2,9 +2,9 @@
     "http://kumarde.com/": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.23",
+            "requestId": "909.39",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "http://kumarde.com/",
             "request": {
                 "url": "http://kumarde.com/",
@@ -16,8 +16,8 @@
                 "mixedContentType": "none",
                 "initialPriority": "VeryHigh"
             },
-            "timestamp": 66234.769756,
-            "wallTime": 1473445661.70351,
+            "timestamp": 68486.378879,
+            "wallTime": 1473448578.01871,
             "initiator": {
                 "type": "other"
             },
@@ -27,9 +27,9 @@
     "https://kumarde.com/": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.23",
+            "requestId": "909.39",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "http://kumarde.com/",
             "request": {
                 "url": "https://kumarde.com/",
@@ -40,8 +40,8 @@
                 "mixedContentType": "none",
                 "initialPriority": "VeryHigh"
             },
-            "timestamp": 66234.774772,
-            "wallTime": 1473445661.70852,
+            "timestamp": 68486.383506,
+            "wallTime": 1473448578.02334,
             "initiator": {
                 "type": "other"
             },
@@ -60,7 +60,7 @@
                 "fromServiceWorker": false,
                 "encodedDataLength": -1,
                 "timing": {
-                    "requestTime": 66234.77278,
+                    "requestTime": 68486.381589,
                     "proxyStart": -1,
                     "proxyEnd": -1,
                     "dnsStart": -1,
@@ -71,11 +71,11 @@
                     "sslEnd": -1,
                     "workerStart": -1,
                     "workerReady": -1,
-                    "sendStart": 0.0830000062705949,
-                    "sendEnd": 0.0830000062705949,
+                    "sendStart": 0.0710000022081658,
+                    "sendEnd": 0.0710000022081658,
                     "pushStart": 0,
                     "pushEnd": 0,
-                    "receiveHeadersEnd": 0.0830000062705949
+                    "receiveHeadersEnd": 0.0710000022081658
                 },
                 "protocol": "http/1.1",
                 "securityState": "neutral"
@@ -87,37 +87,40 @@
             "status": 200,
             "statusText": "OK",
             "headers": {
-                "Date": "Fri, 09 Sep 2016 18:33:43 GMT",
+                "Date": "Fri, 09 Sep 2016 19:24:02 GMT",
                 "Content-Encoding": "gzip",
-                "Last-Modified": "Fri, 09 Sep 2016 16:36:07 GMT",
+                "Last-Modified": "Fri, 09 Sep 2016 19:23:27 GMT",
                 "Server": "nginx/1.4.6 (Ubuntu)",
-                "Content-Type": "text/html"
+                "Transfer-Encoding": "chunked",
+                "Strict-Transport-Security": "max-age=15768000",
+                "Content-Type": "text/html",
+                "Connection": "keep-alive"
             },
             "mimeType": "text/html",
             "connectionReused": false,
-            "connectionId": 0,
+            "connectionId": 67148,
             "remoteIPAddress": "52.91.50.91",
             "remotePort": 443,
-            "fromDiskCache": true,
+            "fromDiskCache": false,
             "fromServiceWorker": false,
             "encodedDataLength": -1,
             "timing": {
-                "requestTime": 66234.777056,
+                "requestTime": 68486.385743,
                 "proxyStart": -1,
                 "proxyEnd": -1,
-                "dnsStart": -1,
-                "dnsEnd": -1,
-                "connectStart": -1,
-                "connectEnd": -1,
-                "sslStart": -1,
-                "sslEnd": -1,
+                "dnsStart": 2.04999999550637,
+                "dnsEnd": 8.1309999950463,
+                "connectStart": 8.1309999950463,
+                "connectEnd": 122.457999998005,
+                "sslStart": 35.5339999950957,
+                "sslEnd": 122.406999988016,
                 "workerStart": -1,
                 "workerReady": -1,
-                "sendStart": 0.395999988541007,
-                "sendEnd": 0.395999988541007,
+                "sendStart": 123.096999988775,
+                "sendEnd": 123.327999986941,
                 "pushStart": 0,
                 "pushEnd": 0,
-                "receiveHeadersEnd": 0.981999997748062
+                "receiveHeadersEnd": 149.147999996785
             },
             "protocol": "http/1.1",
             "securityState": "secure",
@@ -141,9 +144,9 @@
     "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.24",
+            "requestId": "909.40",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "https://kumarde.com/",
             "request": {
                 "url": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css",
@@ -155,8 +158,8 @@
                 "mixedContentType": "none",
                 "initialPriority": "VeryHigh"
             },
-            "timestamp": 66234.810002,
-            "wallTime": 1473445661.74375,
+            "timestamp": 68486.58052,
+            "wallTime": 1473448578.22035,
             "initiator": {
                 "type": "parser",
                 "url": "https://kumarde.com/",
@@ -194,7 +197,7 @@
             "fromServiceWorker": false,
             "encodedDataLength": -1,
             "timing": {
-                "requestTime": 66234.811541,
+                "requestTime": 68486.582113,
                 "proxyStart": -1,
                 "proxyEnd": -1,
                 "dnsStart": -1,
@@ -205,11 +208,11 @@
                 "sslEnd": -1,
                 "workerStart": -1,
                 "workerReady": -1,
-                "sendStart": 0.388000000384636,
-                "sendEnd": 0.388000000384636,
+                "sendStart": 0.375999996322207,
+                "sendEnd": 0.375999996322207,
                 "pushStart": 0,
                 "pushEnd": 0,
-                "receiveHeadersEnd": 1.23100000200793
+                "receiveHeadersEnd": 1.23200000962242
             },
             "protocol": "spdy",
             "securityState": "secure",
@@ -233,19 +236,24 @@
     "https://kumarde.com/index.css": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.25",
+            "requestId": "909.41",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "https://kumarde.com/",
             "request": {
                 "url": "https://kumarde.com/index.css",
                 "method": "GET",
-                "headers": {},
+                "headers": {
+                    "Referer": "https://kumarde.com/",
+                    "If-None-Match": "\"57d2f72e-111\"",
+                    "If-Modified-Since": "Fri, 09 Sep 2016 17:53:50 GMT",
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+                },
                 "mixedContentType": "none",
-                "initialPriority": "VeryLow"
+                "initialPriority": "VeryHigh"
             },
-            "timestamp": 66234.811252,
-            "wallTime": 1473445661.745,
+            "timestamp": 68486.581939,
+            "wallTime": 1473448578.22177,
             "initiator": {
                 "type": "parser",
                 "url": "https://kumarde.com/",
@@ -255,29 +263,26 @@
         },
         "response": {
             "url": "https://kumarde.com/index.css",
-            "status": 200,
-            "statusText": "OK",
+            "status": 304,
+            "statusText": "Not Modified",
             "headers": {
-                "Date": "Fri, 09 Sep 2016 18:33:43 GMT",
+                "Date": "Fri, 09 Sep 2016 19:24:02 GMT",
                 "Last-Modified": "Fri, 09 Sep 2016 17:53:50 GMT",
                 "Server": "nginx/1.4.6 (Ubuntu)",
-                "ETag": "\"57d2f72e-111\"",
-                "Strict-Transport-Security": "max-age=15768000",
-                "Content-Type": "text/css",
                 "Connection": "keep-alive",
-                "Accept-Ranges": "bytes",
-                "Content-Length": "273"
+                "ETag": "\"57d2f72e-111\"",
+                "Strict-Transport-Security": "max-age=15768000"
             },
             "mimeType": "text/css",
             "connectionReused": true,
-            "connectionId": 67079,
+            "connectionId": 67148,
             "remoteIPAddress": "52.91.50.91",
             "remotePort": 443,
             "fromDiskCache": false,
             "fromServiceWorker": false,
             "encodedDataLength": -1,
             "timing": {
-                "requestTime": 66132.725073,
+                "requestTime": 68486.587016,
                 "proxyStart": -1,
                 "proxyEnd": -1,
                 "dnsStart": -1,
@@ -288,11 +293,11 @@
                 "sslEnd": -1,
                 "workerStart": -1,
                 "workerReady": -1,
-                "sendStart": 6.3640000007581,
-                "sendEnd": 6.54400000348687,
+                "sendStart": 6.17100000090431,
+                "sendEnd": 6.39199999568518,
                 "pushStart": 0,
                 "pushEnd": 0,
-                "receiveHeadersEnd": 32.7060000126949
+                "receiveHeadersEnd": 33.2589999889024
             },
             "protocol": "http/1.1",
             "securityState": "secure",
@@ -316,9 +321,9 @@
     "https://fonts.googleapis.com/css?family=Lato:400,300,100": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.26",
+            "requestId": "909.42",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "https://kumarde.com/",
             "request": {
                 "url": "https://fonts.googleapis.com/css?family=Lato:400,300,100",
@@ -327,8 +332,8 @@
                 "mixedContentType": "none",
                 "initialPriority": "VeryLow"
             },
-            "timestamp": 66234.813405,
-            "wallTime": 1473445661.74715,
+            "timestamp": 68486.583265,
+            "wallTime": 1473448578.22309,
             "initiator": {
                 "type": "parser",
                 "url": "https://kumarde.com/",
@@ -428,9 +433,9 @@
     "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.27",
+            "requestId": "909.43",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "https://kumarde.com/",
             "request": {
                 "url": "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js",
@@ -442,8 +447,8 @@
                 "mixedContentType": "none",
                 "initialPriority": "High"
             },
-            "timestamp": 66234.816247,
-            "wallTime": 1473445661.75,
+            "timestamp": 68486.586496,
+            "wallTime": 1473448578.22633,
             "initiator": {
                 "type": "parser",
                 "url": "https://kumarde.com/",
@@ -482,7 +487,7 @@
             "fromServiceWorker": false,
             "encodedDataLength": -1,
             "timing": {
-                "requestTime": 66234.818551,
+                "requestTime": 68486.589414,
                 "proxyStart": -1,
                 "proxyEnd": -1,
                 "dnsStart": -1,
@@ -493,11 +498,11 @@
                 "sslEnd": -1,
                 "workerStart": -1,
                 "workerReady": -1,
-                "sendStart": 0.364999999874271,
-                "sendEnd": 0.364999999874271,
+                "sendStart": 0.342999992426485,
+                "sendEnd": 0.342999992426485,
                 "pushStart": 0,
                 "pushEnd": 0,
-                "receiveHeadersEnd": 2.94500000018161
+                "receiveHeadersEnd": 8.74799999292009
             },
             "protocol": "spdy",
             "securityState": "secure",
@@ -542,12 +547,95 @@
             }
         }
     },
+    "https://kumarde.com/hello.js": {
+        "numberOfTimesRequested": 2,
+        "data": {
+            "requestId": "909.50",
+            "frameId": "909.1",
+            "loaderId": "909.3",
+            "documentURL": "https://kumarde.com/",
+            "request": {
+                "url": "https://kumarde.com/hello.js",
+                "method": "GET",
+                "headers": {
+                    "Referer": "https://kumarde.com/",
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+                },
+                "mixedContentType": "none",
+                "initialPriority": "High"
+            },
+            "timestamp": 68486.822635,
+            "wallTime": 1473448578.46246,
+            "initiator": {
+                "type": "parser",
+                "url": "https://kumarde.com/",
+                "lineNumber": 9
+            },
+            "type": "Other"
+        },
+        "response": {
+            "url": "https://kumarde.com/hello.js",
+            "status": 404,
+            "statusText": "Not Found",
+            "headers": {
+                "Date": "Fri, 09 Sep 2016 19:24:02 GMT",
+                "Content-Encoding": "gzip",
+                "Server": "nginx/1.4.6 (Ubuntu)",
+                "Connection": "keep-alive",
+                "Transfer-Encoding": "chunked",
+                "Content-Type": "text/html"
+            },
+            "mimeType": "text/html",
+            "connectionReused": true,
+            "connectionId": 67148,
+            "remoteIPAddress": "52.91.50.91",
+            "remotePort": 443,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "encodedDataLength": -1,
+            "timing": {
+                "requestTime": 68486.824337,
+                "proxyStart": -1,
+                "proxyEnd": -1,
+                "dnsStart": -1,
+                "dnsEnd": -1,
+                "connectStart": -1,
+                "connectEnd": -1,
+                "sslStart": -1,
+                "sslEnd": -1,
+                "workerStart": -1,
+                "workerReady": -1,
+                "sendStart": 2.04700000176672,
+                "sendEnd": 2.26500000280794,
+                "pushStart": 0,
+                "pushEnd": 0,
+                "receiveHeadersEnd": 29.4710000016494
+            },
+            "protocol": "http/1.1",
+            "securityState": "secure",
+            "securityDetails": {
+                "protocol": "TLS 1.2",
+                "keyExchange": "ECDHE_RSA",
+                "cipher": "AES_128_GCM",
+                "certificateId": 0,
+                "subjectName": "www.kumarde.com",
+                "sanList": [
+                    "kumarde.com",
+                    "www.kumarde.com"
+                ],
+                "issuer": "Let's Encrypt Authority X3",
+                "validFrom": 1469164620,
+                "validTo": 1476940620,
+                "signedCertificateTimestampList": []
+            }
+        }
+    },
     "https://kumarde.com/img/headshot1.jpg": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.32",
+            "requestId": "909.45",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "https://kumarde.com/",
             "request": {
                 "url": "https://kumarde.com/img/headshot1.jpg",
@@ -556,8 +644,8 @@
                 "mixedContentType": "none",
                 "initialPriority": "VeryLow"
             },
-            "timestamp": 66234.820483,
-            "wallTime": 1473445661.75423,
+            "timestamp": 68486.589174,
+            "wallTime": 1473448578.229,
             "initiator": {
                 "type": "parser",
                 "url": "https://kumarde.com/",
@@ -569,8 +657,7 @@
             "url": "https://kumarde.com/img/headshot1.jpg",
             "status": 200,
             "statusText": "OK",
-            "headers": {
-                "Date": "Fri, 09 Sep 2016 18:33:43 GMT",
+            "headers": { "Date": "Fri, 09 Sep 2016 18:33:43 GMT",
                 "Last-Modified": "Mon, 30 May 2016 05:23:04 GMT",
                 "Server": "nginx/1.4.6 (Ubuntu)",
                 "ETag": "\"574bce38-59bff\"",
@@ -628,9 +715,9 @@
     "https://www.google-analytics.com/analytics.js": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.33",
+            "requestId": "909.51",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "https://kumarde.com/",
             "request": {
                 "url": "https://www.google-analytics.com/analytics.js",
@@ -642,17 +729,17 @@
                 "mixedContentType": "none",
                 "initialPriority": "Low"
             },
-            "timestamp": 66234.991256,
-            "wallTime": 1473445661.92501,
+            "timestamp": 68486.862979,
+            "wallTime": 1473448578.50281,
             "initiator": {
                 "type": "script",
                 "stack": {
                     "callFrames": [
                         {
                             "functionName": "",
-                            "scriptId": "29",
+                            "scriptId": "35",
                             "url": "https://kumarde.com/",
-                            "lineNumber": 12,
+                            "lineNumber": 13,
                             "columnNumber": 65
                         }
                     ]
@@ -688,7 +775,7 @@
             "fromServiceWorker": false,
             "encodedDataLength": -1,
             "timing": {
-                "requestTime": 66234.99318,
+                "requestTime": 68486.865207,
                 "proxyStart": -1,
                 "proxyEnd": -1,
                 "dnsStart": -1,
@@ -699,11 +786,11 @@
                 "sslEnd": -1,
                 "workerStart": -1,
                 "workerReady": -1,
-                "sendStart": 0.390999994124286,
-                "sendEnd": 0.390999994124286,
+                "sendStart": 0.465000004624017,
+                "sendEnd": 0.465000004624017,
                 "pushStart": 0,
                 "pushEnd": 0,
-                "receiveHeadersEnd": 1.34599999000784
+                "receiveHeadersEnd": 5.65400000778027
             },
             "protocol": "spdy",
             "securityState": "secure",
@@ -757,7 +844,7 @@
         "data": {
             "requestId": "909.19",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "https://kumarde.com/",
             "request": {
                 "url": "https://fonts.gstatic.com/s/lato/v11/22JRxvfANxSmnAhzbFH8PgLUuEpTyoUstqEm5AMlJo4.woff2",
@@ -766,8 +853,8 @@
                 "mixedContentType": "none",
                 "initialPriority": "VeryLow"
             },
-            "timestamp": 66235.022821,
-            "wallTime": 1473445661.95657,
+            "timestamp": 68486.88732,
+            "wallTime": 1473448578.52715,
             "initiator": {
                 "type": "parser",
                 "url": "https://kumarde.com/",
@@ -912,15 +999,15 @@
             }
         }
     },
-    "https://www.google-analytics.com/collect?v=1&_v=j46&a=1577088121&t=pageview&_s=1&dl=https%3A%2F%2Fkumarde.com%2F&ul=en-us&de=windows-1252&dt=Deepak%20Kumar&sd=24-bit&sr=800x600&vp=785x600&je=0&_u=AACAAEABI~&jid=&cid=740302400.1473445560&tid=UA-77723744-1&z=1186982049": {
+    "https://www.google-analytics.com/r/collect?v=1&_v=j46&a=811117570&t=pageview&_s=1&dl=https%3A%2F%2Fkumarde.com%2F&ul=en-us&de=windows-1252&dt=Deepak%20Kumar&sd=24-bit&sr=800x600&vp=785x600&je=0&_u=AACAAEABI~&jid=1980828975&cid=740302400.1473445560&tid=UA-77723744-1&_r=1&z=1633441792": {
         "numberOfTimesRequested": 1,
         "data": {
-            "requestId": "909.38",
+            "requestId": "909.56",
             "frameId": "909.1",
-            "loaderId": "909.2",
+            "loaderId": "909.3",
             "documentURL": "https://kumarde.com/",
             "request": {
-                "url": "https://www.google-analytics.com/collect?v=1&_v=j46&a=1577088121&t=pageview&_s=1&dl=https%3A%2F%2Fkumarde.com%2F&ul=en-us&de=windows-1252&dt=Deepak%20Kumar&sd=24-bit&sr=800x600&vp=785x600&je=0&_u=AACAAEABI~&jid=&cid=740302400.1473445560&tid=UA-77723744-1&z=1186982049",
+                "url": "https://www.google-analytics.com/r/collect?v=1&_v=j46&a=811117570&t=pageview&_s=1&dl=https%3A%2F%2Fkumarde.com%2F&ul=en-us&de=windows-1252&dt=Deepak%20Kumar&sd=24-bit&sr=800x600&vp=785x600&je=0&_u=AACAAEABI~&jid=1980828975&cid=740302400.1473445560&tid=UA-77723744-1&_r=1&z=1633441792",
                 "method": "GET",
                 "headers": {
                     "Referer": "https://kumarde.com/",
@@ -929,8 +1016,8 @@
                 "mixedContentType": "none",
                 "initialPriority": "Low"
             },
-            "timestamp": 66235.131628,
-            "wallTime": 1473445662.06538,
+            "timestamp": 68486.990452,
+            "wallTime": 1473448578.63028,
             "initiator": {
                 "type": "script",
                 "stack": {
@@ -940,49 +1027,48 @@
             "type": "Other"
         },
         "response": {
-            "url": "https://www.google-analytics.com/collect?v=1&_v=j46&a=1577088121&t=pageview&_s=1&dl=https%3A%2F%2Fkumarde.com%2F&ul=en-us&de=windows-1252&dt=Deepak%20Kumar&sd=24-bit&sr=800x600&vp=785x600&je=0&_u=AACAAEABI~&jid=&cid=740302400.1473445560&tid=UA-77723744-1&z=1186982049",
+            "url": "https://www.google-analytics.com/r/collect?v=1&_v=j46&a=811117570&t=pageview&_s=1&dl=https%3A%2F%2Fkumarde.com%2F&ul=en-us&de=windows-1252&dt=Deepak%20Kumar&sd=24-bit&sr=800x600&vp=785x600&je=0&_u=AACAAEABI~&jid=1980828975&cid=740302400.1473445560&tid=UA-77723744-1&_r=1&z=1633441792",
             "status": 200,
             "statusText": "",
             "headers": {
                 "pragma": "no-cache",
-                "date": "Tue, 06 Sep 2016 19:29:08 GMT",
+                "date": "Fri, 09 Sep 2016 19:16:18 GMT",
                 "x-content-type-options": "nosniff",
                 "last-modified": "Sun, 17 May 1998 03:00:00 GMT",
                 "server": "Golfe2",
-                "age": "255514",
                 "status": "200",
                 "content-type": "image/gif",
                 "access-control-allow-origin": "*",
                 "cache-control": "no-cache, no-store, must-revalidate",
                 "alt-svc": "quic=\":443\"; ma=2592000; v=\"36,35,34,33,32\"",
                 "content-length": "35",
-                "expires": "Mon, 01 Jan 1990 00:00:00 GMT"
+                "expires": "Fri, 01 Jan 1990 00:00:00 GMT"
             },
             "mimeType": "image/gif",
-            "connectionReused": true,
-            "connectionId": 67120,
+            "connectionReused": false,
+            "connectionId": 67169,
             "remoteIPAddress": "216.58.192.206",
             "remotePort": 443,
             "fromDiskCache": false,
             "fromServiceWorker": false,
             "encodedDataLength": -1,
             "timing": {
-                "requestTime": 66235.133521,
+                "requestTime": 68486.992674,
                 "proxyStart": -1,
                 "proxyEnd": -1,
-                "dnsStart": -1,
-                "dnsEnd": -1,
-                "connectStart": -1,
-                "connectEnd": -1,
-                "sslStart": -1,
-                "sslEnd": -1,
+                "dnsStart": 1.28900000709109,
+                "dnsEnd": 10.0349999993341,
+                "connectStart": 10.0349999993341,
+                "connectEnd": 34.0050000086194,
+                "sslStart": 19.5700000040233,
+                "sslEnd": 33.9490000042133,
                 "workerStart": -1,
                 "workerReady": -1,
-                "sendStart": 1.22700000065379,
-                "sendEnd": 2.28100000822451,
+                "sendStart": 36.1220000049798,
+                "sendEnd": 37.0100000000093,
                 "pushStart": 0,
                 "pushEnd": 0,
-                "receiveHeadersEnd": 10.1090000098338
+                "receiveHeadersEnd": 101.393000004464
             },
             "protocol": "spdy",
             "securityState": "secure",
