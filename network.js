@@ -24,25 +24,32 @@ function getChromeInstance() {
 function connect() {
   var request_data = {}
   var response_data = []
+  var timeout = 10000;
+ 
+  function printDataAndExit(){
+    console.log(JSON.stringify(request_data, null, 4));
+    headless.kill();
+    process.exit(0); 
+  }
+ 
+  setTimeout(printDataAndExit, timeout);
   
   getChromeInstance().then(instance => {
     
-    instance.Network.requestServedFromCache(function(data){
-      //console.log(data);    
-    });
-
     instance.Network.responseReceived(function(data){
-      //console.log(data);
       //This request was sent out
       if(data.response.url in request_data){
         request_data[data.response.url].response = data.response;
-        console.log(request_data[data.response.url]); 
       }
     });
     
     instance.Network.requestWillBeSent(function(data){
-      //console.log(data); 
-      request_data[data.request.url] = data
+      if(!(data.request.url in request_data)){
+        request_data[data.request.url] = {}
+        request_data[data.request.url].numberOfTimesRequested = 0;
+      }
+      request_data[data.request.url].data = data
+      request_data[data.request.url].numberOfTimesRequested += 1;
     });
 
     instance.Page.enable();
