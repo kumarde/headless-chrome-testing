@@ -93,7 +93,6 @@ function connect() {
                             child_data = request_data[child_url]; 
                         }
                         count++;
-                        console.log(child_url);
                         outputTree.add(child_url, parent_url, child_data, outputTree.traverseBF); 
                     }
                 }
@@ -113,7 +112,7 @@ function connect() {
 
                     if(request_data[resource_url] !== undefined){
                         child_data = {}; 
-                        child_data.numTimesRequests = request_data[resource_url].numberOfTimesRequested;
+                        child_data.numberOfTimesRequested = request_data[resource_url].numberOfTimesRequested;
                         child_data.request = request_data[resource_url].data.request;
                         child_data.response = {};
                         if(request_data[resource_url].hasOwnProperty("response")){
@@ -122,13 +121,13 @@ function connect() {
                         }
                     }
                     count++;
-                    console.log(resource_url);
                     outputTree.add(resource_url, parent_url, child_data, outputTree.traverseBF);
                 }
             }
-          
-            console.log(numConnections);
-            console.log(count); 
+        
+            //Add total number of resources found 
+            outputTree._root.numResources = count;
+
             fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
 
             headless.kill();
