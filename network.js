@@ -88,7 +88,15 @@ function connect() {
                         if(parent_url == resource_url){
                             continue;    
                         }
-                        outputTree.add(resource_url, parent_url, request_data[resource_url], outputTree.traverseBF);
+                        network = {};
+                        network.numTimesRequests = request_data[resource_url].numberOfTimesRequested;
+                        network.request = request_data[resource_url].data.request;
+                        network.response = {};
+                        if(request_data[resource_url].hasOwnProperty("response")){
+                            network.response.url = request_data[resource_url].response.url;
+                            network.response.headers = request_data[resource_url].response.headers;
+                        }
+                        outputTree.add(resource_url, parent_url, network, outputTree.traverseBF);
                     }
                 }
             }
