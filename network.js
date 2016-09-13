@@ -88,7 +88,14 @@ function connect() {
                             continue;    
                         }
                         if(request_data[child_url] !== undefined){
-                            child_data = request_data[child_url]; 
+                            child_data = {};
+                            child_data.numberOfTimesRequested = request_data[child_url].numberOfTimesRequested;
+                            child_data.request = request_data[child_url].data.request;
+                            child_data.response = {};
+                            if(request_data[child_url].hasOwnProperty("response")){
+                                child_data.response.url = request_data[child_url].response.url;
+                                child_data.response.heads = request_data[child_url].response.headers;    
+                            }
                         }
                         count++;
                         outputTree.add(child_url, parent_url, child_data, outputTree.traverseBF); 
