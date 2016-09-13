@@ -4,8 +4,6 @@ var tree = require('./tree.js');
 var fs = require('fs');
 var Queue = require('./queue.js');
 
-var Node = require('tree-node');
-
 const url = require('url')
 
 if (process.argv.length != 6){
@@ -24,7 +22,7 @@ var outputFile = process.argv[4] || "outfile";
 var port = process.argv[5];
 
 var headless = spawn(process.argv[2], [
-       '--remote-debugging-port='+port]);
+       '--no-sandbox', '--remote-debugging-port='+port]);
 
 headless.stderr.on('data', (data) => {
     var err_string = `${data}`;
