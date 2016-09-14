@@ -58,10 +58,8 @@ function connect() {
     var root_domain = screenshotUrl;
     var numConnections = 0;
 
-
     function getResourceTree(instance){
         instance.Page.getResourceTree().then((v) => {
-
             var root_domain = cleanURL(v.frameTree.frame.url);
             var outputTree = new tree(root_domain, request_data[root_domain]); 
              
@@ -136,8 +134,12 @@ function connect() {
             fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
 
             headless.kill();
+            
+            if(count == 0 && outputTree._root.response == null){
+                process.exit(7); 
+            }
             process.exit(0);
-        });    
+        }); 
     }
 
     getChromeInstance().then(instance => {
@@ -153,7 +155,8 @@ function connect() {
             });
 
             instance.Network.requestWillBeSent(function(data){
-                //find the appropriate "root"
+                //console.log(data);
+                
                 data.request.url = cleanURL(data.request.url);
                 
                 if(!(data.request.url in request_data)){
