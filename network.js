@@ -99,7 +99,8 @@ function connect() {
                             child_data.response = {};
                             if(request_data[child_url].hasOwnProperty("response")){
                                 child_data.response.url = request_data[child_url].response.url;
-                                child_data.response.heads = request_data[child_url].response.headers;    
+                                child_data.response.headers = request_data[child_url].response.headers;
+                                child_data.status = request_data[child_url].response.status; 
                             }
                         }
                         count++;
@@ -128,6 +129,7 @@ function connect() {
                         if(request_data[resource_url].hasOwnProperty("response")){
                             child_data.response.url = request_data[resource_url].response.url;
                             child_data.response.headers = request_data[resource_url].response.headers;
+                            child_data.response.status = request_data[resource_url].response.status;
                         }
                     }
                     count++;
