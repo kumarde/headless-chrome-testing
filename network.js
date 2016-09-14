@@ -36,6 +36,13 @@ headless.stderr.on('data', (data) => {
 // Dumb timeout for now
 setTimeout(connect, 2000);
 
+function statusInErrorRange(code){
+    if(code >= 400 && code < 600){
+        return true;    
+    }    
+    return false;
+}
+
 function getChromeInstance() {
     return new Promise((res, rej) => {
         Chrome({port: port}, function (chromeInstance) {
@@ -138,6 +145,10 @@ function connect() {
             if(count == 0 && outputTree._root.response == null){
                 process.exit(7); 
             }
+            if(count == 0 && statusInErrorRange(outputTree._root.response.status)){
+                process.exit(7);    
+            }
+
             process.exit(0);
         }); 
     }
