@@ -143,6 +143,10 @@ function connect() {
             fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
 
             headless.kill();
+
+            if(input_hostname.indexOf('www.') == 0){
+                process.exit(0);     
+            }
             
             if(count == 0 && outputTree._root.response == null){
                 process.exit(7); 
