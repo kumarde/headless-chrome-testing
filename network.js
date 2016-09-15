@@ -139,12 +139,16 @@ function connect() {
         
             //Add total number of resources found 
             outputTree._root.numResources = count;
-
-            if(count == 0 && outputTree._root.response == null){
-                outputTree._root.error_received = "did_not_load";
-            }
-            else if(count == 0 && statusInErrorRange(outputTree._root.response.status)){
-                outputTree._root.error_received = "did_not_load";
+            
+            if(outputTree._root.hasOwnProperty("networkData")){
+                if(count == 0 && outputTree._root.networkData.response == null){
+                    console.log('response was null');
+                    outputTree._root.error_received = "did_not_load";
+                }
+                else if(count == 0 && statusInErrorRange(outputTree._root.networkData.response.status)){
+                    console.log('status was in error range');
+                    outputTree._root.error_received = "did_not_load";
+                }
             }
             
             fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
@@ -156,7 +160,6 @@ function connect() {
                 process.exit(0); 
             }*/
             
-
             process.exit(0);
         }); 
     }
