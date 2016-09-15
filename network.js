@@ -140,20 +140,22 @@ function connect() {
             //Add total number of resources found 
             outputTree._root.numResources = count;
 
-            fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
-
-            headless.kill();
-
-            if(input_hostname.indexOf('www.') == 0){
-                process.exit(0);     
+            if(count == 0 && outputTree._root.response == null){
+                outputTree._root.error_received = "did_not_load";
+            }
+            else if(count == 0 && statusInErrorRange(outputTree._root.response.status)){
+                outputTree._root.error_received = "did_not_load";
             }
             
-            if(count == 0 && outputTree._root.response == null){
-                process.exit(7); 
-            }
-            if(count == 0 && statusInErrorRange(outputTree._root.response.status)){
-                process.exit(7);    
-            }
+            fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
+            headless.kill();
+
+            /*url_hostname = url.parse(outputTree._root.data).hostname;
+            
+            if(url_hostname.indexOf('www.') == 0){
+                process.exit(0); 
+            }*/
+            
 
             process.exit(0);
         }); 
