@@ -3,6 +3,7 @@ var spawn = require('child_process').spawn;
 var tree = require('./tree.js');
 var fs = require('fs');
 var Queue = require('./queue.js');
+var dns = require('dns-sync');
 
 const url = require('url')
 
@@ -61,7 +62,7 @@ function cleanURL(url){
 function connect() {
     var request_data = {}
     var response_data = []
-    var timeout = 15000;
+    var timeout = 30000;
     var root_domain = screenshotUrl;
     var numConnections = 0;
 
@@ -102,6 +103,7 @@ function connect() {
                                 child_data.response.headers = request_data[child_url].response.headers;
                                 child_data.status = request_data[child_url].response.status; 
                             }
+                            delete request_data[child_url];
                         }
                         count++;
                         outputTree.add(child_url, parent_url, child_data, outputTree.traverseBF); 
@@ -131,6 +133,7 @@ function connect() {
                             child_data.response.headers = request_data[resource_url].response.headers;
                             child_data.response.status = request_data[resource_url].response.status;
                         }
+                        delete request_data[resource_url];
                     }
                     count++;
                     outputTree.add(resource_url, parent_url, child_data, outputTree.traverseBF);
@@ -138,8 +141,17 @@ function connect() {
             }
         
             //Add total number of resources found 
-            outputTree._root.numResources = count;
+            remaining_count = 0;
+            for(var key in request_data){
+                if(key == outputTree._root.data){
+                    continue;
+                }
+                remaining_count++;
+                outputTree._root.children.push(request_data[key]);
+            }
             
+            outputTree._root.numResources = count + remaining_count;
+
             if(outputTree._root.hasOwnProperty("networkData")){
                 if(count == 0 && outputTree._root.networkData.response == null){
                     console.log('response was null');
@@ -147,7 +159,14 @@ function connect() {
                 }
                 else if(count == 0 && statusInErrorRange(outputTree._root.networkData.response.status)){
                     console.log('status was in error range');
-                    outputTree._root.error_received = "did_not_load";
+                    url_hostname = url.parse(outputTree._root.data).hostname;
+                    if(url_hostname.indexOf('www.') != 0){
+                        www_prepend_to_url = 'www.'+url_hostname;
+                        resolved_dns = dns.resolve(www_prepend_to_url);
+                        if(resolved_dns != null){
+                            outputTree._root.error_received = "did_not_load";
+                        } 
+                    } 
                 }
             }
             
