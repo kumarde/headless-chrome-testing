@@ -36,6 +36,19 @@ headless.stderr.on('data', (data) => {
 
 // Dumb timeout for now
 setTimeout(connect, 2000);
+setTimeout(checkDNSOfInput, 1000);
+
+function checkDNSOfInput(){
+    if(dns.resolve(input_hostname) == null){
+        var outputTree = new tree(screenshotUrl, null);
+        outputTree.error_received = 'did_not_load';
+        outputTree.dns_lookup_failed = true;
+        outputTree._root.numResources = 0;
+        fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
+        headless.kill();
+        process.exit(0);
+    }
+}
 
 function statusInErrorRange(code){
     if(code >= 400 && code < 600){
@@ -69,16 +82,6 @@ function connect() {
         instance.Page.getResourceTree().then((v) => {
             var root_domain = cleanURL(v.frameTree.frame.url);
             var outputTree = new tree(root_domain, request_data[root_domain]); 
-            
-            if(dns.resolve(input_hostname) == null){
-                outputTree.error_received = 'did_not_load';
-                outputTree.dns_lookup_failed = true;
-                outputTree._root.numResources = 0;
-                fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
-                headless.kill()
-                process.exit(0);
-            }
-
             var frameTreeQueue = new Queue();
             var count = 0; 
             frameTreeQueue.enqueue(v.frameTree);
