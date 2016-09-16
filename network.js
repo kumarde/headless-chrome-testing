@@ -155,8 +155,11 @@ function connect() {
                 if(key == outputTree._root.data){
                     continue;
                 }
+                if(request_data[key].data.redirectResponse != null){
+                    continue;
+                }
                 remaining_count++;
-                outputTree._root.children.push(request_data[key]);
+                outputTree.add(key, root_domain, request_data[key], outputTree.traverseBF);
             }
             
             outputTree._root.numResources = count + remaining_count;
