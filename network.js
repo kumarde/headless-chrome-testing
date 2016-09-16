@@ -62,7 +62,7 @@ function cleanURL(url){
 function connect() {
     var request_data = {}
     var response_data = []
-    var timeout = 30000;
+    var timeout = 20000;
     var root_domain = screenshotUrl;
     var numConnections = 0;
 
