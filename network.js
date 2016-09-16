@@ -54,7 +54,6 @@ function getChromeInstance() {
     });
 }
 
-
 function cleanURL(url){
     return url.toLowerCase().replace(/\/+$/,"") + "/";    
 }
@@ -70,10 +69,20 @@ function connect() {
         instance.Page.getResourceTree().then((v) => {
             var root_domain = cleanURL(v.frameTree.frame.url);
             var outputTree = new tree(root_domain, request_data[root_domain]); 
-             
+            
+            if(dns.resolve(input_hostname) == null){
+                outputTree.error_received = 'did_not_load';
+                outputTree.dns_lookup_failed = true;
+                outputTree._root.numResources = 0;
+                fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
+                headless.kill()
+                process.exit(0);
+            }
+
             var frameTreeQueue = new Queue();
             var count = 0; 
             frameTreeQueue.enqueue(v.frameTree);
+
             /*
                 frameResourceTree:
                     frame : Object
@@ -113,12 +122,12 @@ function connect() {
                 for(var i = 0; i < current.resources.length; ++i){
                     resource_url = cleanURL(current.resources[i].url);
                     protocol = url.parse(resource_url).protocol;
+
                     if(protocol !== 'http:' && protocol !== 'https:'){
                         continue;    
                     }
                     
                     child_data = {error: "No network data available for this resource"};
-                    
                     if(resource_url == parent_url){
                         continue;
                     }
@@ -140,7 +149,7 @@ function connect() {
                 }
             }
         
-            //Add total number of resources found 
+            //Add total number of resources found that aren't in network tree
             remaining_count = 0;
             for(var key in request_data){
                 if(key == outputTree._root.data){
@@ -152,6 +161,7 @@ function connect() {
             
             outputTree._root.numResources = count + remaining_count;
 
+            //Check for error scenarios to report back to nopools.py
             if(outputTree._root.hasOwnProperty("networkData")){
                 if(count == 0 && outputTree._root.networkData.response == null){
                     console.log('response was null');
@@ -172,13 +182,6 @@ function connect() {
             
             fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
             headless.kill();
-
-            /*url_hostname = url.parse(outputTree._root.data).hostname;
-            
-            if(url_hostname.indexOf('www.') == 0){
-                process.exit(0); 
-            }*/
-            
             process.exit(0);
         }); 
     }
@@ -212,18 +215,15 @@ function connect() {
             });
            
             setTimeout(getResourceTree.bind(null, instance), timeout);
-            //instance.Page.loadEventFired(getResourceTree.bind(null, instance));
 
             instance.Page.enable();
             instance.Network.enable();
 
             mac_firefox_user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:45.0) Gecko/20100101 Firefox/45.0";
-
             linux_chrome_user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36"
-
             mac_chrome_user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
-
-            instance.Network.setUserAgentOverride({userAgent: mac_chrome_user_agent});
+            
+            instance.Network.setUserAgentOverride({userAgent: mac_firefox_user_agent});
 
             instance.once('ready', () => {
                 instance.Page.navigate({url: screenshotUrl})
