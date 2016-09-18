@@ -21,7 +21,7 @@ from threading import Timer
 #list of processes, how many processes to put into the pool
 #and how many total jobs to run, respectively
 LIST_PROCESSES = []
-MAX_PROCESSES = 20
+MAX_PROCESSES = 30
 SUB_PROCESSES = 50
 PHANTOMJS_TIMEOUT = 300 
 TRACEROUTE_PORT = 80
@@ -402,6 +402,14 @@ class Website(object):
                     return True
                 else:
                     return False
+            elif "_root" in json_output:
+                if "error_received" in json_output["_root"]:
+                    if json_output["_root"]["error_received"] == "did_not_load":
+                        return True
+                    else:
+                        return False
+                else:
+                    return False
             else:
                 return False
         except Exception as e:
@@ -448,10 +456,6 @@ class Website(object):
                 self.stdout_data = f.read()
             os.remove(temp_filename)
             
-            if proc.returncode is not None and proc.returncode == 7 and not\
-                self.domain.startswith('www.'):
-                return([self.rank, self.domain])
-
             #if proc exits correctly, everything ok
             if proc.returncode is not None and proc.returncode == 0 and not\
                 self.domain.startswith('www.'):
