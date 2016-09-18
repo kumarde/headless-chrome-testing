@@ -82,6 +82,16 @@ function connect() {
         instance.Page.getResourceTree().then((v) => {
             var root_domain = cleanURL(v.frameTree.frame.url);
             var outputTree = new tree(root_domain, request_data[root_domain]); 
+           
+            //If the page did not load 
+            if(request_data[root_domain] == null){
+                outputTree.error_received = 'did_not_load';
+                outputTree._root.numResources = 0;
+                fs.writeFileSync(outputFile, JSON.stringify(outputTree, null, 4));
+                headless.kill();
+                process.exit(0); 
+            }
+            
             var frameTreeQueue = new Queue();
             var count = 0; 
             frameTreeQueue.enqueue(v.frameTree);
@@ -229,7 +239,7 @@ function connect() {
             linux_chrome_user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36"
             mac_chrome_user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
             
-            instance.Network.setUserAgentOverride({userAgent: mac_firefox_user_agent});
+            instance.Network.setUserAgentOverride({userAgent: mac_chrome_user_agent});
 
             instance.once('ready', () => {
                 instance.Page.navigate({url: screenshotUrl})
